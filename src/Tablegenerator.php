@@ -175,10 +175,14 @@ class Tablegenerator
 
         if($this->paginate){
 <<<<<<< HEAD
+<<<<<<< HEAD
             $this->query = $this->query->paginate($this->pagesize);
 =======
             $this->query = $this->query->paginate();
 >>>>>>> cc0fdd4 (Added ApiResource feature)
+=======
+            $this->query = $this->query->paginate($this->pagesize);
+>>>>>>> 4ad022f (Added pagesize feature)
         }else{
             $this->query = $this->query->get();
         }

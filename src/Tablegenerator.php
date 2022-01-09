@@ -60,7 +60,11 @@ class Tablegenerator
      *
      * @var string
      */
+<<<<<<< HEAD
     protected string $resource = \Advicepharma\Tablegenerator\Resources\GeneralResource::class;
+=======
+    protected string $resource = '';
+>>>>>>> cc0fdd4 (Added ApiResource feature)
 
     private $filters = null;
     private $sorts = null;
@@ -170,7 +174,11 @@ class Tablegenerator
         }
 
         if($this->paginate){
+<<<<<<< HEAD
             $this->query = $this->query->paginate($this->pagesize);
+=======
+            $this->query = $this->query->paginate();
+>>>>>>> cc0fdd4 (Added ApiResource feature)
         }else{
             $this->query = $this->query->get();
         }
@@ -179,7 +187,13 @@ class Tablegenerator
 
         return [
             'columns' => $this->table->generateColumns(),
+<<<<<<< HEAD
             'data' => $this->resource::collection($this->query)->response()->getData(true)
+=======
+            'data' => ($this->resource
+                        ? $this->resource::collection($this->query)->response()->getData(true)
+                        : $this->query)
+>>>>>>> cc0fdd4 (Added ApiResource feature)
         ];
 
     }
